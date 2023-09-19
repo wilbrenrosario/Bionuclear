@@ -13,7 +13,10 @@ C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infra
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\Azure.Identity.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\Azure.Storage.Common.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\Azure.Storage.Files.Shares.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\Humanizer.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\MailKit.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\MailKit.NET.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\MediatR.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\MediatR.Contracts.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -35,7 +38,9 @@ C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infra
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\MimeKit.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -44,8 +49,10 @@ C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infra
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\System.Drawing.Common.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\System.IO.Hashing.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\System.Management.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\System.Memory.Data.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\System.Runtime.Caching.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\System.Security.Permissions.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\System.Windows.Extensions.dll
@@ -58,7 +65,9 @@ C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infra
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.0\System.Management.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\Bionuclear.Application.dll
@@ -86,12 +95,3 @@ C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infra
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\obj\Debug\net7.0\Bionuclear.Infrastructure.pdb
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\obj\Debug\net7.0\Bionuclear.Infrastructure.genruntimeconfig.cache
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\obj\Debug\net7.0\ref\Bionuclear.Infrastructure.dll
-C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
-C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\MailKit.dll
-C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\MailKit.NET.dll
-C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\MimeKit.dll
-C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\Newtonsoft.Json.dll
-C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\System.Management.dll
-C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.0\System.Management.dll
-C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Infrastructure\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
