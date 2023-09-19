@@ -121,6 +121,7 @@ app.controller("RegistrarController", function($scope, $http,$location, GlobalSe
         },
         error: function() {
            console.log("error");
+           console.log("El token actual es: " + superCache.get("token"));
         }
     });
     };
