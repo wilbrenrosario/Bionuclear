@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Bionuclear.Infrastructure.props" />
+</Project>

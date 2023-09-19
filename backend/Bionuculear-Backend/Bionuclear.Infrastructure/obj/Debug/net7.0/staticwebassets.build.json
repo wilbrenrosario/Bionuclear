@@ -1,0 +1,34 @@
+{
+  "Version": 1,
+  "Hash": "2bSpxdOwWSW0AAK+6ATUZyeeWigEDqKSr4rgLxFIaXk=",
+  "Source": "Bionuclear.Infrastructure",
+  "BasePath": "_content/Bionuclear.Infrastructure",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\Wilbren\\Desktop\\Bionuclear\\backend\\Bionuculear-Backend\\Bionuclear.Application\\Bionuclear.Application.csproj",
+      "Version": 2,
+      "Source": "Bionuclear.Application",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    },
+    {
+      "Identity": "C:\\Users\\Wilbren\\Desktop\\Bionuclear\\backend\\Bionuculear-Backend\\Bionuclear.Core\\Bionuclear.Core.csproj",
+      "Version": 2,
+      "Source": "Bionuclear.Core",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

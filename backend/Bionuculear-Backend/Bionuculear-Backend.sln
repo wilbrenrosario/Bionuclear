@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bionuclear.Core", "Bionuclear.Core\Bionuclear.Core.csproj", "{9BEA5DA9-93F7-4A9F-8CFE-CA92D1E60D48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bionuclear.Core", "Bionuclear.Core\Bionuclear.Core.csproj", "{9BEA5DA9-93F7-4A9F-8CFE-CA92D1E60D48}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{36E2B228-7011-4BDA-99B9-25A3AA35A7BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A065A67A-4808-4621-ADA9-D9DBC0C384A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bionuclear.Application", "Bionuclear.Application\Bionuclear.Application.csproj", "{36F3403E-5825-464C-A2D6-4BCF1885A5DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bionuclear.Application", "Bionuclear.Application\Bionuclear.Application.csproj", "{36F3403E-5825-464C-A2D6-4BCF1885A5DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bionuclear.Infrastructure", "Bionuclear.Infrastructure\Bionuclear.Infrastructure.csproj", "{24B0FC68-0CC7-4BAB-9B96-BEDCAF0E6ACA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bionuclear.Api", "Bionuclear.Api\Bionuclear.Api.csproj", "{19C8C77F-21FB-4D77-B0A5-B35E145F276D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +29,14 @@ Global
 		{36F3403E-5825-464C-A2D6-4BCF1885A5DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36F3403E-5825-464C-A2D6-4BCF1885A5DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36F3403E-5825-464C-A2D6-4BCF1885A5DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24B0FC68-0CC7-4BAB-9B96-BEDCAF0E6ACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24B0FC68-0CC7-4BAB-9B96-BEDCAF0E6ACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24B0FC68-0CC7-4BAB-9B96-BEDCAF0E6ACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24B0FC68-0CC7-4BAB-9B96-BEDCAF0E6ACA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19C8C77F-21FB-4D77-B0A5-B35E145F276D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19C8C77F-21FB-4D77-B0A5-B35E145F276D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19C8C77F-21FB-4D77-B0A5-B35E145F276D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19C8C77F-21FB-4D77-B0A5-B35E145F276D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +44,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9BEA5DA9-93F7-4A9F-8CFE-CA92D1E60D48} = {36E2B228-7011-4BDA-99B9-25A3AA35A7BD}
 		{36F3403E-5825-464C-A2D6-4BCF1885A5DA} = {36E2B228-7011-4BDA-99B9-25A3AA35A7BD}
+		{24B0FC68-0CC7-4BAB-9B96-BEDCAF0E6ACA} = {36E2B228-7011-4BDA-99B9-25A3AA35A7BD}
+		{19C8C77F-21FB-4D77-B0A5-B35E145F276D} = {36E2B228-7011-4BDA-99B9-25A3AA35A7BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4248A73-ED30-4697-89AC-896C0FF0CC2E}
