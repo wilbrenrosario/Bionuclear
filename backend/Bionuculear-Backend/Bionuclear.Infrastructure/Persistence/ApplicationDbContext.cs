@@ -8,9 +8,7 @@ namespace Bionuclear.Infrastructure.Persistence
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-
         }
-
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Resultados> Resultados { get; set; }
         public DbSet<LinksResultados> LinksResultados { get; set; }
