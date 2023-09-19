@@ -84,7 +84,7 @@ app.controller("LoginController", function($scope, $http, $window, $location, Gl
 
 app.controller("HomeController", function($scope, $http,$location, superCache) {
 
-    $scope.url_base = "http://127.0.0.1:5500/frontend/#!/";
+    $scope.url_base = "https://master--incandescent-sunburst-c9c837.netlify.app/#!/";
     if(superCache.get("token") == undefined){
       $location.path('/');
     }
@@ -94,7 +94,7 @@ app.controller("RegistrarController", function($scope, $http,$location, GlobalSe
    if(superCache.get("token") == undefined){
       $location.path('/');
     }
-    $scope.url_base = "http://127.0.0.1:5500/frontend/#!/";
+    $scope.url_base = "https://master--incandescent-sunburst-c9c837.netlify.app/#!/";
     $scope.sexo = "-1";
     $scope.expediente = "";
     $scope.registrar = function(){
