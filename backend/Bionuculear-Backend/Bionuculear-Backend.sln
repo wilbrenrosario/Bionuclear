@@ -11,9 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A065A67A-4
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bionuclear.Application", "Bionuclear.Application\Bionuclear.Application.csproj", "{36F3403E-5825-464C-A2D6-4BCF1885A5DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bionuclear.Infrastructure", "Bionuclear.Infrastructure\Bionuclear.Infrastructure.csproj", "{24B0FC68-0CC7-4BAB-9B96-BEDCAF0E6ACA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bionuclear.Infrastructure", "Bionuclear.Infrastructure\Bionuclear.Infrastructure.csproj", "{24B0FC68-0CC7-4BAB-9B96-BEDCAF0E6ACA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bionuclear.Api", "Bionuclear.Api\Bionuclear.Api.csproj", "{19C8C77F-21FB-4D77-B0A5-B35E145F276D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bionuclear.Api", "Bionuclear.Api\Bionuclear.Api.csproj", "{19C8C77F-21FB-4D77-B0A5-B35E145F276D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "functions", "functions", "{EE262394-0970-4129-A56F-423A2947A6BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservadorTimer", "ObservadorTimer\ObservadorTimer.csproj", "{50000343-EF07-4A6C-A797-E49801F48A12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +41,10 @@ Global
 		{19C8C77F-21FB-4D77-B0A5-B35E145F276D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19C8C77F-21FB-4D77-B0A5-B35E145F276D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19C8C77F-21FB-4D77-B0A5-B35E145F276D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50000343-EF07-4A6C-A797-E49801F48A12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50000343-EF07-4A6C-A797-E49801F48A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50000343-EF07-4A6C-A797-E49801F48A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50000343-EF07-4A6C-A797-E49801F48A12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +54,7 @@ Global
 		{36F3403E-5825-464C-A2D6-4BCF1885A5DA} = {36E2B228-7011-4BDA-99B9-25A3AA35A7BD}
 		{24B0FC68-0CC7-4BAB-9B96-BEDCAF0E6ACA} = {36E2B228-7011-4BDA-99B9-25A3AA35A7BD}
 		{19C8C77F-21FB-4D77-B0A5-B35E145F276D} = {36E2B228-7011-4BDA-99B9-25A3AA35A7BD}
+		{50000343-EF07-4A6C-A797-E49801F48A12} = {EE262394-0970-4129-A56F-423A2947A6BE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4248A73-ED30-4697-89AC-896C0FF0CC2E}
