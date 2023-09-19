@@ -18,6 +18,7 @@ C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\b
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Azure.Identity.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Azure.Storage.Common.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Azure.Storage.Files.Shares.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Humanizer.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\MediatR.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\MediatR.Contracts.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
@@ -25,8 +26,10 @@ C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\b
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.Identity.Client.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
@@ -38,9 +41,11 @@ C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\b
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\System.CodeDom.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\System.Drawing.Common.dll
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
@@ -73,6 +78,7 @@ C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\o
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\Bionuclear.Api.AssemblyInfoInputs.cache
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\Bionuclear.Api.AssemblyInfo.cs
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\Bionuclear.Api.csproj.CoreCompileInputs.cache
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\Bionuclear.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\Bionuclear.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\staticwebassets\msbuild.Bionuclear.Api.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\staticwebassets\msbuild.build.Bionuclear.Api.props
@@ -88,8 +94,3 @@ C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\o
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\Bionuclear.Api.pdb
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\Bionuclear.Api.genruntimeconfig.cache
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\ref\Bionuclear.Api.dll
-C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Humanizer.dll
-C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
-C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Mono.TextTemplating.dll
-C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\System.CodeDom.dll
