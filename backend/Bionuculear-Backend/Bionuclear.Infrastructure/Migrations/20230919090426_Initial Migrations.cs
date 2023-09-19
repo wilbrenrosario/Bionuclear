@@ -31,12 +31,30 @@ namespace Bionuclear.Infrastructure.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     numero_expediente = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    nombre_documento = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    link_resultado = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    nombre_documento = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_LinksResultados", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Resultados",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    comentario = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    nombre_paciente = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    correo_electroncio_paciente = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    fecha_registro = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    nombre_doctor = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    sexo_paciente = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    numero_expediente = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Resultados", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -55,36 +73,6 @@ namespace Bionuclear.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Usuarios", x => x.id);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "Resultados",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    comentario = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    nombre_paciente = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    correo_electroncio_paciente = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    link_resultadosid = table.Column<int>(type: "int", nullable: false),
-                    fecha_registro = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    nombre_doctor = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    sexo_paciente = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Resultados", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_Resultados_LinksResultados_link_resultadosid",
-                        column: x => x.link_resultadosid,
-                        principalTable: "LinksResultados",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Resultados_link_resultadosid",
-                table: "Resultados",
-                column: "link_resultadosid");
         }
 
         /// <inheritdoc />
@@ -94,13 +82,13 @@ namespace Bionuclear.Infrastructure.Migrations
                 name: "ColaCorreos");
 
             migrationBuilder.DropTable(
+                name: "LinksResultados");
+
+            migrationBuilder.DropTable(
                 name: "Resultados");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");
-
-            migrationBuilder.DropTable(
-                name: "LinksResultados");
         }
     }
 }

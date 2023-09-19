@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bionuclear.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230919081441_Initial Migrations")]
+    [Migration("20230919090426_Initial Migrations")]
     partial class InitialMigrations
     {
         /// <inheritdoc />
@@ -44,17 +44,13 @@ namespace Bionuclear.Infrastructure.Migrations
                     b.ToTable("ColaCorreos");
                 });
 
-            modelBuilder.Entity("Bionuclear.Core.Models.LinksResultados", b =>
+            modelBuilder.Entity("Bionuclear.Core.Models.LinksResultados.LinksResultados", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<string>("link_resultado")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("nombre_documento")
                         .IsRequired()
@@ -69,7 +65,7 @@ namespace Bionuclear.Infrastructure.Migrations
                     b.ToTable("LinksResultados");
                 });
 
-            modelBuilder.Entity("Bionuclear.Core.Models.Resultados", b =>
+            modelBuilder.Entity("Bionuclear.Core.Models.Resultados.Resultados", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -89,9 +85,6 @@ namespace Bionuclear.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("link_resultadosid")
-                        .HasColumnType("int");
-
                     b.Property<string>("nombre_doctor")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -100,13 +93,15 @@ namespace Bionuclear.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("numero_expediente")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("sexo_paciente")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
-
-                    b.HasIndex("link_resultadosid");
 
                     b.ToTable("Resultados");
                 });
@@ -141,17 +136,6 @@ namespace Bionuclear.Infrastructure.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Usuarios");
-                });
-
-            modelBuilder.Entity("Bionuclear.Core.Models.Resultados", b =>
-                {
-                    b.HasOne("Bionuclear.Core.Models.LinksResultados", "link_resultados")
-                        .WithMany()
-                        .HasForeignKey("link_resultadosid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("link_resultados");
                 });
 #pragma warning restore 612, 618
         }

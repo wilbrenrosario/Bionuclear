@@ -73,7 +73,6 @@ C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\o
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\Bionuclear.Api.AssemblyInfoInputs.cache
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\Bionuclear.Api.AssemblyInfo.cs
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\Bionuclear.Api.csproj.CoreCompileInputs.cache
-C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\Bionuclear.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\Bionuclear.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\staticwebassets\msbuild.Bionuclear.Api.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\staticwebassets\msbuild.build.Bionuclear.Api.props

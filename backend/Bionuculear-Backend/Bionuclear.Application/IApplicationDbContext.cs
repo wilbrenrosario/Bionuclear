@@ -1,4 +1,6 @@
 ﻿using Bionuclear.Core.Models;
+using Bionuclear.Core.Models.LinksResultados;
+using Bionuclear.Core.Models.Resultados;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bionuclear.Application
