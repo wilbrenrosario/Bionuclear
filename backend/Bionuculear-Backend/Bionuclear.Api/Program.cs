@@ -20,7 +20,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: "origin",
                       policy =>
                       {
-                          policy.WithOrigins("http://127.0.0.1:5500").AllowAnyHeader()
+                          policy.WithOrigins("http://127.0.0.1:5500", "https://master--incandescent-sunburst-c9c837.netlify.app/#!/",
+                              "https://master--incandescent-sunburst-c9c837.netlify.app").AllowAnyHeader()
                                                   .AllowAnyMethod(); ;
                       });
 });
