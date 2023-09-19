@@ -1,24 +1,51 @@
 var app = angular.module("Bionuclear", ["ngRoute"]);
 
-app.service("GlobalServices", function($http){
+app.factory('superCache', ['$cacheFactory', function($cacheFactory) {
+   return $cacheFactory('super-cache');
+ }]);
 
+app.factory("GlobalServices", function($http, superCache){
    var url_base = "https://bionuclearapi.azurewebsites.net";
+   
+   
+   var getData = function(nombre, clave) {
+      return $http({method:"POST", url: url_base + "/api/Usuarios", data: {"correo": nombre, "clave": clave}}).then(function(result){
+         superCache.put('token', result.data.token);
+         superCache.put('tipo_usuario', 0);
+         return result.data;
+      });
+  };
 
-   this.login = function(nombre, clave) {
-       $http({
-           method: 'POST',
-           url: url_base + "/api/Usuarios",
-           data: {"correo": nombre, "clave": clave}
-         }).then(function successCallback(response) {
-              console.log(response.data)
-              return true;
-           }, function errorCallback(response) {
-              console.log(response);
-              return false;
-           });
-   }
+  var registrar = function(comentario, nombre_paciente, correo_electroncio_paciente, nombre_doctor, sexo_paciente) {
+   console.log("Buscando el token: " + superCache.get("token"));
+   $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
+   return $http({method:"POST", url: url_base + "/api/Resultados", data: {
+      "comentario": comentario,
+      "nombre_paciente": nombre_paciente,
+      "correo_electroncio_paciente": correo_electroncio_paciente,
+      "nombre_doctor": nombre_doctor,
+      "sexo_paciente": sexo_paciente,
+      "numero_expediente": "0"
+    }}).then(function(result){
+      alert("Resultados Registrados!!")
+       return result.data;
+   });
+};
+
+
+var subirFoto = function(nombre, clave) {
+   return $http({method:"POST", url: url_base + "/api/Usuarios", data: {"correo": nombre, "clave": clave}}).then(function(result){
+      superCache.put('token', result.data.token);
+      superCache.put('tipo_usuario', 0);
+      return result.data;
+   });
+};
+
+
+  return { getData: getData, registrar: registrar, subirFoto: subirFoto};
 
 });
+
 
 app.config(function($routeProvider){
     $routeProvider
@@ -45,65 +72,40 @@ app.controller("LoginController", function($scope, $http, $window, $location, Gl
     $scope.clave = "";
 
     $scope.loguear = function(){
-      console.log($scope.email);
-      console.log($scope.clave);
-
-      if($scope.email != "" && $scope.clave != ""){
-         var respuesta = GlobalServices.login($scope.email, $scope.clave);
-         if(respuesta){
+      if($scope.email != "" && $scope.clave != ""){   
+         var respuesta = GlobalServices.getData($scope.email, $scope.clave);
+         respuesta.then(function(result) { 
+            console.log(result);
             $location.path('/home');
-         }else{
+         });
+         /*else{
             alert("Sus credenciales son incorrectas")
-         }
+         }*/
       }
       else{
          alert("Ingrese sus datos.")
       }
 
-      $scope.email = "";
       $scope.clave = "";
 
     };
     
     });
 
-app.controller("HomeController", function($scope, $http,$location) {
+app.controller("HomeController", function($scope, $http,$location, superCache) {
 
     $scope.url_base = "http://127.0.0.1:5500/frontend/#!/";
-    $scope.posts = [];
-    $scope.llamarpeticion = function() {
-       // Simple GET request example:
-    $http({
-       method: 'GET',
-       url: 'https://jsonplaceholder.typicode.com/posts'
-     }).then(function successCallback(response) {
-          console.log(response.data)
-          $scope.posts = response.data;
-       }, function errorCallback(response) {
-          console.log(response);
-       });
-    };
-    
+    if(superCache.get("token") == undefined){
+      $location.path('/');
+    }
     });
-app.controller("RegistrarController", function($scope, $http) {
+app.controller("RegistrarController", function($scope, $http,$location, GlobalServices, superCache) {
 
+   if(superCache.get("token") == undefined){
+      $location.path('/');
+    }
     $scope.url_base = "http://127.0.0.1:5500/frontend/#!/";
-    $scope.posts = [];
-    $scope.llamarpeticion = function() {
-       // Simple GET request example:
-    $http({
-       method: 'GET',
-       url: 'https://jsonplaceholder.typicode.com/posts'
-     }).then(function successCallback(response) {
-          console.log(response.data)
-          $scope.posts = response.data;
-       }, function errorCallback(response) {
-          console.log(response);
-       });
-    };
-
     $scope.sexo = "-1";
-
     $scope.registrar = function(){
       console.log($scope.nombre);
       console.log($scope.correo);
@@ -111,6 +113,11 @@ app.controller("RegistrarController", function($scope, $http) {
       console.log($scope.doctor);
       console.log($scope.comentario);
       console.log($scope.file);
+
+      var respuesta = GlobalServices.registrar($scope.comentario, $scope.nombre, $scope.correo, $scope.doctor, $scope.sexo);
+      respuesta.then(function(result) { 
+         console.log(result);
+      });
 
     };
     
