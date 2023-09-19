@@ -126,10 +126,6 @@ namespace Bionuclear.Infrastructure.Migrations
                     b.Property<int>("tipo_usuario")
                         .HasColumnType("int");
 
-                    b.Property<string>("usuario")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("id");
 
                     b.ToTable("Usuarios");

@@ -14,10 +14,9 @@ namespace Bionuclear.Infrastructure.Sql.Commands.Registrar
         public async Task Handle(RegistrarCommand request, CancellationToken cancellationToken)
         {
             var new_user = new Usuarios {
-                usuario = request.Usuarios.usuario,
+                correo_electronico = request.Usuarios.correo_electronico,
                 clave = request.Usuarios.clave,
                 nombre_completo = request.Usuarios.nombre_completo,
-                correo_electronico = request.Usuarios.correo_electronico,
                 tipo_usuario = 0
             };
 

@@ -26,18 +26,15 @@ namespace Bionuclear.Infrastructure.Sql.Commands.Resultado
             
             if (usuario == null)
             {
-                var usuari = "user" + Guid.NewGuid().ToString();
                 var new_user = new Usuarios
-                {
-                    usuario = usuari,
-                    clave = "123456",
+                { clave = "123456",
                     nombre_completo = request.Resultados.nombre_paciente,
                     correo_electronico = request.Resultados.correo_electroncio_paciente,
                     tipo_usuario = 1 //Usuario cliente
                 };
                 await _context.Usuarios.AddAsync(new_user);
                 await _context.ColaCorreos.AddAsync(new ColaCorreos { correo_electronico = request.Resultados.correo_electroncio_paciente });
-                var body = "<b>Usuario<b>: " + usuari + " <br> <b>Clave<b>: 123456";
+                var body = "<b>Usuario<b>: " + request.Resultados.correo_electroncio_paciente + " <br> <b>Clave<b>: 123456";
                 Correo.enviar_correo(configuration.GetSection("Email:Host").Value, int.Parse(configuration.GetSection("Email:Port").Value), configuration.GetSection("Email:UserName").Value, configuration.GetSection("Email:PassWord").Value, request.Resultados.correo_electroncio_paciente, body);
             }
             else

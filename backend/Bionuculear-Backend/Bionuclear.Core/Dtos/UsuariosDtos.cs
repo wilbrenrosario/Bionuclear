@@ -2,7 +2,7 @@
 {
     public class UsuariosDtos
     {
-        public string usuario { get; set; }
+        public string correo { get; set; }
         public string clave { get; set; }
     }
 }

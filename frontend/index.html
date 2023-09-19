@@ -1,32 +1,66 @@
-<html ng-app="App">
+<html ng-app="Bionuclear">
 <head>
     <title>Bionuclear - AngularJS</title>
     <script src="app/lib/angular.main.js"></script>
-    <script src="app/controllers/controller.js"></script>
-</head>
-<body ng-controller="home">
-    <div>
-        <p>Mi nombre es {{nombre}}</p>
-    </div>
-    <br>
-    <input type="text" ng-model="favMeat" placeholder="enter you fav meat"></input>
-    <p>Your fav meat is: {{favMeat}}</p>
-     
-    <h3>Comentarios</h3>
-    <ul>
-        <li ng-repeat="com in comentarios">
-            {{com.comentario}} - <strong>{{com.username}}</strong>
-        </li>
-    </ul>
+    <script src="app/lib/angular-route-min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/frontend/app/app.js"></script>
 
-    <br><br>
-    <h3>Mis POSTS</h3>
-    <button ng-click="llamarpeticion()">Buscar data</button>
-    <ul>
-        <li ng-repeat="po in posts">
-            {{po.body}}
-        </li>
-    </ul>
-    <h4 ng-show="posts.length < 1">NO HAY REGISTROS</h4>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="src/assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="src/assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="src/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="src/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="src/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="src/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <!-- Page CSS -->
+    <!-- Page -->
+    <link rel="stylesheet" href="src/assets/vendor/css/pages/page-auth.css" />
+
+    <!-- Helpers -->
+    <script src="src/assets/vendor/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="src/assets/js/config.js"></script>
+</head>
+<body>
+    <main ng-view></main>
+
+          <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="src/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="src/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="src/assets/vendor/libs/popper/popper.js"></script>
+    <script src="src/assets/vendor/js/bootstrap.js"></script>
+    <script src="src/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="src/assets/vendor/js/menu.js"></script>
+
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+
+    <!-- Main JS -->
+    <script src="src/assets/js/main.js"></script>
+
+    <!-- Page JS -->
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

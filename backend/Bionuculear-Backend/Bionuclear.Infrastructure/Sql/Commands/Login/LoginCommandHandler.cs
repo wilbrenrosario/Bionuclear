@@ -14,7 +14,7 @@ namespace Bionuclear.Infrastructure.Sql.Commands.Login
         }
         public async Task<Usuarios> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
-            var usuario = _context.Usuarios.Where(x => x.usuario == request.Usuarios.usuario && x.clave == request.Usuarios.clave).FirstOrDefault();
+            var usuario = _context.Usuarios.Where(x => x.correo_electronico == request.Usuarios.correo && x.clave == request.Usuarios.clave).FirstOrDefault();
             
             if (usuario == null)
             {
