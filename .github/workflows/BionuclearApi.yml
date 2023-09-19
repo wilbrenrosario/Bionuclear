@@ -1,17 +1,17 @@
-name: Build and deploy .NET Core application to Web App BionuclearApi20230919031540
+name: Build and deploy .NET Core application to Web App BionuclearApi
 on:
   push:
     branches:
     - master
 env:
-  AZURE_WEBAPP_NAME: BionuclearApi20230919031540
-  AZURE_WEBAPP_PACKAGE_PATH: ./publish
+  AZURE_WEBAPP_NAME: BionuclearApi
+  AZURE_WEBAPP_PACKAGE_PATH: .\publish
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 7.0.x
   WORKING_DIRECTORY: ./backend/Bionuculear-Backend/Bionuclear.Api/Bionuclear.Api.csproj
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET SDK
@@ -32,7 +32,7 @@ jobs:
         name: webapp
         path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: build
     steps:
     - name: Download artifact from build job
@@ -44,5 +44,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.BionuclearApi20230919031540_DC4F }}
+        publish-profile: ${{ secrets.BionuclearApi_5B71 }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
