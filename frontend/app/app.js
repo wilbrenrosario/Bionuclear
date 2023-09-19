@@ -16,7 +16,7 @@ app.factory("GlobalServices", function($http, superCache){
       });
   };
 
-  var registrar = function(comentario, nombre_paciente, correo_electroncio_paciente, nombre_doctor, sexo_paciente) {
+  var registrar = function(comentario, nombre_paciente, correo_electroncio_paciente, nombre_doctor, sexo_paciente, expdiente) {
    console.log("Buscando el token: " + superCache.get("token"));
    $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
    return $http({method:"POST", url: url_base + "/api/Resultados", data: {
@@ -25,26 +25,16 @@ app.factory("GlobalServices", function($http, superCache){
       "correo_electroncio_paciente": correo_electroncio_paciente,
       "nombre_doctor": nombre_doctor,
       "sexo_paciente": sexo_paciente,
-      "numero_expediente": "0"
+      "numero_expediente": expdiente
     }}).then(function(result){
       alert("Resultados Registrados!!")
        return result.data;
    });
 };
 
-
-var subirFoto = function(nombre, clave) {
-   return $http({method:"POST", url: url_base + "/api/Usuarios", data: {"correo": nombre, "clave": clave}}).then(function(result){
-      superCache.put('token', result.data.token);
-      superCache.put('tipo_usuario', 0);
-      return result.data;
-   });
-};
-
-
-  return { getData: getData, registrar: registrar, subirFoto: subirFoto};
-
+  return { getData: getData, registrar: registrar};
 });
+
 
 
 app.config(function($routeProvider){
@@ -106,20 +96,32 @@ app.controller("RegistrarController", function($scope, $http,$location, GlobalSe
     }
     $scope.url_base = "http://127.0.0.1:5500/frontend/#!/";
     $scope.sexo = "-1";
+    $scope.expediente = "";
     $scope.registrar = function(){
-      console.log($scope.nombre);
-      console.log($scope.correo);
-      console.log($scope.sexo);
-      console.log($scope.doctor);
-      console.log($scope.comentario);
-      console.log($scope.file);
 
-      var respuesta = GlobalServices.registrar($scope.comentario, $scope.nombre, $scope.correo, $scope.doctor, $scope.sexo);
-      respuesta.then(function(result) { 
-         console.log(result);
-      });
-
+      var formData = new FormData($('#formulario')[0]);
+      formData.append('FileDetail', $('input[type=file]')[0].files[0]); 
+    
+      $.ajax({
+        url: 'https://bionuclearapi.azurewebsites.net/api/Files/Upload',
+        data: formData,
+        type: 'POST',
+        contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+        processData: false, // NEEDED, DON'T OMIT THIS
+        beforeSend: function() {
+           
+        },
+        success: function(msg) {
+           console.log(msg);
+           $scope.expediente = msg;
+           var respuesta = GlobalServices.registrar($scope.comentario, $scope.nombre, $scope.correo, $scope.doctor, $scope.sexo, $scope.expediente);
+           respuesta.then(function(result) { 
+              console.log(result);
+           });
+        },
+        error: function() {
+           console.log("error");
+        }
+    });
     };
-    
-    
     });   
