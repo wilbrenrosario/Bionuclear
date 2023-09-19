@@ -16,9 +16,6 @@ namespace Bionuclear.Infrastructure.Sql.Commands.Resultado
         }
         public async Task<ResultadosDtos> Handle(ResultadosCommand request, CancellationToken cancellationToken)
         {
-
-
-
             var result = new Bionuclear.Core.Models.Resultados.Resultados
             {
                 comentario = request.Resultados.comentario,
@@ -26,7 +23,8 @@ namespace Bionuclear.Infrastructure.Sql.Commands.Resultado
                 correo_electroncio_paciente = request.Resultados.correo_electroncio_paciente,
                 fecha_registro = DateTime.Now.ToString(),
                 nombre_doctor = request.Resultados.nombre_doctor,
-                sexo_paciente = request.Resultados.sexo_paciente
+                sexo_paciente = request.Resultados.sexo_paciente,
+                numero_expediente = request.Resultados.numero_expediente
             };
 
             await _context.Resultados.AddAsync(result);
