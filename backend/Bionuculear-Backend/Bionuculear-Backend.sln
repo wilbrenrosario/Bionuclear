@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bionuclear.Infrastructure",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bionuclear.Api", "Bionuclear.Api\Bionuclear.Api.csproj", "{19C8C77F-21FB-4D77-B0A5-B35E145F276D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTest", "ApiTest\ApiTest.csproj", "{B86A512D-4A7B-4055-BA38-ADD8897F0680}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{19C8C77F-21FB-4D77-B0A5-B35E145F276D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19C8C77F-21FB-4D77-B0A5-B35E145F276D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19C8C77F-21FB-4D77-B0A5-B35E145F276D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B86A512D-4A7B-4055-BA38-ADD8897F0680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B86A512D-4A7B-4055-BA38-ADD8897F0680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B86A512D-4A7B-4055-BA38-ADD8897F0680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B86A512D-4A7B-4055-BA38-ADD8897F0680}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{36F3403E-5825-464C-A2D6-4BCF1885A5DA} = {36E2B228-7011-4BDA-99B9-25A3AA35A7BD}
 		{24B0FC68-0CC7-4BAB-9B96-BEDCAF0E6ACA} = {36E2B228-7011-4BDA-99B9-25A3AA35A7BD}
 		{19C8C77F-21FB-4D77-B0A5-B35E145F276D} = {36E2B228-7011-4BDA-99B9-25A3AA35A7BD}
+		{B86A512D-4A7B-4055-BA38-ADD8897F0680} = {A065A67A-4808-4621-ADA9-D9DBC0C384A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4248A73-ED30-4697-89AC-896C0FF0CC2E}
