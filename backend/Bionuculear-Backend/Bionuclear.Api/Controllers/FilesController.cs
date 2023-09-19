@@ -1,11 +1,13 @@
 ﻿using Bionuclear.Core.AzureFiles;
 using Bionuclear.Infrastructure.Sql.Commands.LinksResultados;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bionuclear.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class FilesController : ControllerBase
@@ -29,9 +31,8 @@ namespace Bionuclear.Api.Controllers
         {
             if (fileDetail.FileDetail != null)
             {
-                await fileShare.FileUploadAsync(fileDetail);
                 var expediente = await mediator.Send(new LinksCommand(new Core.Dtos.LinksDtos { nombre_documento = fileDetail.FileDetail.FileName }));
-                
+                await fileShare.FileUploadAsync(fileDetail);        
                 return Ok(expediente);
             }
 

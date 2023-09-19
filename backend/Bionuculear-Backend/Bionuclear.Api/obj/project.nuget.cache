@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sos+XNUtcQ2SgvM5KXW2nakwfMBDFAis6KZ2vLRKccuQIE2XXQ5TMNXBLGEGRNmK3RKOSG2AsOZmQHY/zgnxiw==",
+  "dgSpecHash": "r63N463g7d5rpAq5m0HxaoYCTz/dGPLJ6tL6VCJnpFG+zH5W3b1n00uOOMGnrI/7wwGgufkQoujVFYuaPE8BUg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Wilbren\\Desktop\\Bionuclear\\backend\\Bionuculear-Backend\\Bionuclear.Api\\Bionuclear.Api.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\Wilbren\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Wilbren\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
     "C:\\Users\\Wilbren\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Wilbren\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.11\\microsoft.aspnetcore.authentication.jwtbearer.7.0.11.nupkg.sha512",
     "C:\\Users\\Wilbren\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.10\\microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
     "C:\\Users\\Wilbren\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Wilbren\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

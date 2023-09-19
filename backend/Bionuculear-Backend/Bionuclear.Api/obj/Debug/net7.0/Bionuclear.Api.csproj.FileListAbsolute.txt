@@ -94,3 +94,4 @@ C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\o
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\Bionuclear.Api.pdb
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\Bionuclear.Api.genruntimeconfig.cache
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\obj\Debug\net7.0\ref\Bionuclear.Api.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
