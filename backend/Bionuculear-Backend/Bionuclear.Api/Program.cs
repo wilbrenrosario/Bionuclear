@@ -14,6 +14,16 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddPersistence(builder.Configuration);
 
+//Enable Cors
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "origin",
+                      policy =>
+                      {
+                          policy.WithOrigins("http://127.0.0.1:5500");
+                      });
+});
+
 //JWT
 #region " JWT "
 
@@ -51,6 +61,8 @@ var app = builder.Build();
 //
 
 app.UseHttpsRedirection();
+
+app.UseCors("origin");
 
 app.UseAuthorization();
 
