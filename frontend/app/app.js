@@ -116,13 +116,14 @@ app.controller("LoginController", function($scope, $http, $window, $location, Gl
          respuesta.then(function(result) { 
             console.log(result);
             $location.path('/home');
-         });
-         /*else{
-            alert("Sus credenciales son incorrectas")
-         }*/
+         },
+         function errorCallback(response) {
+            Swal.fire('Correo o clave incoreccta!')
+          });
+        
       }
       else{
-         alert("Ingrese sus datos.")
+         Swal.fire('Ingrese sus datos.')
       }
     };
     
@@ -191,11 +192,14 @@ app.controller("RegistrarController", function($scope, $http,$location, GlobalSe
            var respuesta = GlobalServices.registrar($scope.comentario, $scope.nombre, $scope.correo, $scope.doctor, $scope.sexo, $scope.expediente);
            respuesta.then(function(result) { 
               console.log(result);
-           });
+              Swal.fire('Datos ingresados')
+           },
+           function errorCallback(response) {
+            Swal.fire('En este momento no se pude ingresar los resultados, intente mas tarde.')
+          });
         },
         error: function() {
            console.log("error");
-           console.log("El token actual es: " + superCache.get("token"));
         }
     });
     };
@@ -232,8 +236,6 @@ app.controller("VerRegistrosController", function($scope, $http,$location, Globa
 
       var respuesta = GlobalServices.updateregistro($scope.comentario, $scope.nombre, $scope.correo, $scope.doctor, $scope.sexo, $routeParams.id, "0");
       respuesta.then(function(result) { 
-         console.log(result);
-         alert("Resultados Actualizados")
          var formData = new FormData($('#formulario')[0]);
          formData.append('FileDetail', $('input[type=file]')[0].files[0]); 
 
@@ -251,7 +253,7 @@ app.controller("VerRegistrosController", function($scope, $http,$location, Globa
                   
                },
                success: function(msg) {
-                  console.log(msg);
+                  Swal.fire('Resultados actualizados!!')
                   $scope.expediente = msg;
                   GlobalServices.updateregistro($scope.comentario, $scope.nombre, $scope.correo, $scope.doctor, $scope.sexo, $routeParams.id, msg);
                },
