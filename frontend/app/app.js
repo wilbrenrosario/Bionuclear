@@ -103,6 +103,7 @@ app.controller("RegistrarController", function($scope, $http,$location, GlobalSe
       formData.append('FileDetail', $('input[type=file]')[0].files[0]); 
     
       $.ajax({
+        headers: {'Authorization': 'Bearer ' +superCache.get("token")},
         url: 'https://bionuclearapi.azurewebsites.net/api/Files/Upload',
         data: formData,
         type: 'POST',
