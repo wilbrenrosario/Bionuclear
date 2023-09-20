@@ -58,7 +58,7 @@ var buscar_resultado = function(id) {
 
 var buscar_archivo = function(expediente) {
    $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
-   return $http({method:"GET", url: url_base + "/api/LinksResultados?expediente=" + expediente}).then(function(result){
+   return $http({method:"GET", url: url_base + "/api/LinksResultados?expdiente=" + expediente}).then(function(result){
        return result.data;
    });
 };
