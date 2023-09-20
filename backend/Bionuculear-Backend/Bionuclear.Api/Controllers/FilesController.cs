@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bionuclear.Api.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class FilesController : ControllerBase
@@ -45,7 +44,7 @@ namespace Bionuclear.Api.Controllers
         /// </summary>
         /// <param name="fileDetail"></param>
         /// <returns></returns>
-        [HttpPost("Download")]
+        [HttpGet("Download")]
         public async Task<IActionResult> DownloadFile(string fileName)
         {
             string file = "";

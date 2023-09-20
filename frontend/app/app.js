@@ -142,13 +142,12 @@ app.controller("HomeController", function($scope, $http,$location, superCache, G
          $scope.resultados = result;
       });
 
-
       $scope.descargar = function(){
          //https://bionuclearapi.azurewebsites.net/api/Files/Download?fileName=Profile.pdf
          $.ajax({
             headers: {'Authorization': 'Bearer ' +superCache.get("token")},
             url: 'https://bionuclearapi.azurewebsites.net/api/Files/Download?fileName=Profile.pdf',
-            type: 'POST',
+            type: 'GET',
             contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
             processData: false, // NEEDED, DON'T OMIT THIS
             beforeSend: function() {
