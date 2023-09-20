@@ -14,7 +14,7 @@ namespace Bionuclear.Infrastructure.Sql.Commands.Correos
             _context = context;
             this.configuration = configuration;
         }
-        public Task Handle(CorreosMasivosCommand request, CancellationToken cancellationToken)
+        public async Task Handle(CorreosMasivosCommand request, CancellationToken cancellationToken)
         {
             var listado_correos = _context.ColaCorreos.Where(x => x.enviado == false);
             foreach (var item in listado_correos)
@@ -22,10 +22,10 @@ namespace Bionuclear.Infrastructure.Sql.Commands.Correos
                 if (!item.enviado)
                 {
                     Correo.enviar_correo(configuration.GetSection("Email:Host").Value, int.Parse(configuration.GetSection("Email:Port").Value), configuration.GetSection("Email:UserName").Value, configuration.GetSection("Email:PassWord").Value, item.correo_electronico, item.body);
+                    item.enviado = true;
+                    await _context.SaveChangesAsync();
                 }
             }
-
-            return Task.CompletedTask;
         }
     }
 }

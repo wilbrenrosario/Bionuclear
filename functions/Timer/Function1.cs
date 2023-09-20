@@ -16,7 +16,7 @@ namespace Timer
 
             using (var client = new HttpClient())
             {
-                var result = await client.GetAsync(url_base + "/Correos");
+                var result = await client.GetAsync(url_base + "/api/Correos");
                 Console.WriteLine(result.StatusCode);
             }
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
