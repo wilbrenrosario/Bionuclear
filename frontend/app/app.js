@@ -58,7 +58,7 @@ app.config(function($routeProvider){
             controller: "RegistrarController",
             templateUrl: "app/views/admin/registro_resultados.html"
             })
-            .when("/ver-registros", {
+            .when("/ver-registros:id", {
                controller: "VerRegistrosController",
                templateUrl: "app/views/admin/ver_registro_resultados.html"
                })
@@ -150,4 +150,8 @@ app.controller("VerRegistrosController", function($scope, $http,$location, Globa
       $location.path('/');
     }
     $scope.url_base = "https://master--incandescent-sunburst-c9c837.netlify.app/#!/";
+    console.log("HOLA")
+    console.log($scope);
+
+
     });   
