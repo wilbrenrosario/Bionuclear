@@ -58,7 +58,7 @@ app.config(function($routeProvider){
             controller: "RegistrarController",
             templateUrl: "app/views/admin/registro_resultados.html"
             })
-            .when("/ver-registros:id", {
+            .when("/ver-registros/:id", {
                controller: "VerRegistrosController",
                templateUrl: "app/views/admin/ver_registro_resultados.html"
                })
@@ -144,7 +144,7 @@ app.controller("RegistrarController", function($scope, $http,$location, GlobalSe
     });
     };
     });   
-app.controller("VerRegistrosController", function($scope, $http,$location, GlobalServices, superCache) {
+app.controller("VerRegistrosController", function($scope, $http,$location, GlobalServices, superCache, $routeParams) {
 
    if(superCache.get("token") == undefined){
       $location.path('/');
@@ -152,6 +152,7 @@ app.controller("VerRegistrosController", function($scope, $http,$location, Globa
     $scope.url_base = "https://master--incandescent-sunburst-c9c837.netlify.app/#!/";
     console.log("HOLA")
     console.log($scope);
+    console.log($routeParams.id);
 
 
     });   
