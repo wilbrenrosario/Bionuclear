@@ -46,7 +46,7 @@ var buscar_resultado = function(id) {
    });
 };
 
-var updateregistro = function(comentario, nombre_paciente, correo_electroncio_paciente, nombre_doctor, sexo_paciente, id) {
+var updateregistro = function(comentario, nombre_paciente, correo_electroncio_paciente, nombre_doctor, sexo_paciente, id, numero_expediente) {
    $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
    return $http({method:"POST", url: url_base + "/api/Resultados/updateresultados", data: {
       "comentario": comentario,
@@ -54,7 +54,7 @@ var updateregistro = function(comentario, nombre_paciente, correo_electroncio_pa
       "correo_electroncio_paciente": correo_electroncio_paciente,
       "nombre_doctor": nombre_doctor,
       "sexo_paciente": sexo_paciente,
-      "numero_expediente": "0",
+      "numero_expediente": numero_expediente,
       "id": id
     }}).then(function(result){
       alert("Resultados Registrados!!")
@@ -176,6 +176,7 @@ app.controller("VerRegistrosController", function($scope, $http,$location, Globa
     $scope.doctor = "";
     $scope.comentario = "";
     $scope.sexo = "";
+    $scope.expediente = "";
 
     var respuesta = GlobalServices.buscar_resultado($routeParams.id);
     respuesta.then(function(result) { 
@@ -191,18 +192,16 @@ app.controller("VerRegistrosController", function($scope, $http,$location, Globa
     
     $scope.updateregistrar = function(){
 
-      var respuesta = GlobalServices.updateregistro($scope.comentario, $scope.nombre, $scope.correo, $scope.doctor, $scope.sexo, $routeParams.id);
+      var respuesta = GlobalServices.updateregistro($scope.comentario, $scope.nombre, $scope.correo, $scope.doctor, $scope.sexo, $routeParams.id, "0");
       respuesta.then(function(result) { 
          console.log(result);
          alert("Resultados Actualizados")
-         console.log("Asi esta el file: " + ('input[type=file]')[0].files);
-         console.log("Asi esta el file: " + ('input[type=file]')[0].files[0]);
          var formData = new FormData($('#formulario')[0]);
          formData.append('FileDetail', $('input[type=file]')[0].files[0]); 
-       
-        /* if($('input[type=file]')[0].files[0]  == null){
-            //nada
-         }else{
+
+         var sd = $('input[type=file]')[0].files[0];
+         if(sd != undefined){
+            //subir archivo
             $.ajax({
                headers: {'Authorization': 'Bearer ' +superCache.get("token")},
                url: 'https://bionuclearapi.azurewebsites.net/api/Files/Upload',
@@ -216,14 +215,14 @@ app.controller("VerRegistrosController", function($scope, $http,$location, Globa
                success: function(msg) {
                   console.log(msg);
                   $scope.expediente = msg;
-               
+                  GlobalServices.updateregistro($scope.comentario, $scope.nombre, $scope.correo, $scope.doctor, $scope.sexo, $routeParams.id, msg);
                },
                error: function() {
                   console.log("error");
                   console.log("El token actual es: " + superCache.get("token"));
                }
            });
-         }*/
+         }
       });
     }
 
