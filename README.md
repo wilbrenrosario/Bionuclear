@@ -7,7 +7,7 @@ Prototipo basasdo en la gestion de resultados de laboratorios, administracion de
 * MailKit
 * Entity Framework
 * Sql Server
-* Azure ( App Services, DB Sql, Azure Account Storage )
+* Azure ( App Services, DB Sql, Azure Account Storage, Azure Functions )
 * AngularJs
 * Bootstrap
 * Jquery
