@@ -45,6 +45,7 @@ namespace Bionuclear.Api.Controllers
         /// </summary>
         /// <param name="fileDetail"></param>
         /// <returns></returns>
+        [AllowAnonymous]
         [HttpGet("Download")]
         public async Task<IActionResult> DownloadFile(string fileName)
         {

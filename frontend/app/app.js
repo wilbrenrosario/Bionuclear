@@ -121,7 +121,7 @@ app.controller("LoginController", function($scope, $http, $window, $location, Gl
     
     });
 
-app.controller("HomeController", function($scope, $http,$location, superCache, GlobalServices) {
+app.controller("HomeController", function($scope, $http, $window,$location, superCache, GlobalServices) {
 
     $scope.isAdmin = superCache.get("tipo_usuario") == "0" ? true : false;
     $scope.url_base = "https://master--incandescent-sunburst-c9c837.netlify.app/#!/";
@@ -143,23 +143,9 @@ app.controller("HomeController", function($scope, $http,$location, superCache, G
       });
 
       $scope.descargar = function(){
-         //https://bionuclearapi.azurewebsites.net/api/Files/Download?fileName=Profile.pdf
-         $.ajax({
-            headers: {'Authorization': 'Bearer ' +superCache.get("token")},
-            url: 'https://bionuclearapi.azurewebsites.net/api/Files/Download?fileName=Profile.pdf',
-            type: 'GET',
-            contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
-            processData: false, // NEEDED, DON'T OMIT THIS
-            beforeSend: function() {
-            },
-            success: function(msg) {
-               console.log("Descargado " + msg);
-            },
-            error: function() {
-               console.log("error");
-               console.log("El token actual es: " + superCache.get("token"));
-            }
-        });
+         //'https://bionuclearapi.azurewebsites.net/api/Files/Download?fileName=Profile.pdf
+         $window.open(
+            "https://bionuclearapi.azurewebsites.net/api/Files/Download?fileName=Profile.pdf", "_blank");
       };
 
     }
