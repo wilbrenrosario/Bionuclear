@@ -25,3 +25,4 @@ Prototipo basasdo en la gestion de resultados de laboratorios, administracion de
 # Rutas
 * WEBSITE: [master--incandescent-sunburst-c9c837.netlify.app](https://master--incandescent-sunburst-c9c837.netlify.app/#!/)
 * API: [api-backend](https://bionuclearapi.azurewebsites.net/swagger/index.html)
+* CREDENCIALES: correo: admin@gmail.com + clave: 123456
