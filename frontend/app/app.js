@@ -180,6 +180,7 @@ app.controller("VerRegistrosController", function($scope, $http,$location, Globa
     respuesta.then(function(result) { 
        console.log(result);
        $scope.id = result[0].id;
+       $scope.nombre = result[0].nombre_paciente;
        $scope.correo = result[0].correo_electroncio_paciente;
        $scope.doctor = result[0].nombre_doctor;
        $scope.comentario = result[0].comentario;
