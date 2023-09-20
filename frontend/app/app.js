@@ -195,9 +195,11 @@ app.controller("VerRegistrosController", function($scope, $http,$location, Globa
       respuesta.then(function(result) { 
          console.log(result);
          alert("Resultados Actualizados")
+         console.log("Asi esta el file: " + ('input[type=file]')[0].files);
+         console.log("Asi esta el file: " + ('input[type=file]')[0].files[0]);
          var formData = new FormData($('#formulario')[0]);
          formData.append('FileDetail', $('input[type=file]')[0].files[0]); 
-         console.log("Asi esta el file: " + ('input[type=file]')[0].files[0]);
+       
         /* if($('input[type=file]')[0].files[0]  == null){
             //nada
          }else{
