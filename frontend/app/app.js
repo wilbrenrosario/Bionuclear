@@ -156,13 +156,16 @@ app.controller("VerRegistrosController", function($scope, $http,$location, Globa
     }
     $scope.url_base = "https://master--incandescent-sunburst-c9c837.netlify.app/#!/";
     $scope.id = "";
-    $scope.correo = "";
+    $scope.correo = "pendiente";
 
     var respuesta = GlobalServices.buscar_resultado($routeParams.id);
     respuesta.then(function(result) { 
        console.log(result);
-       $scope.id = result.id;
-       $scope.correo = result.correo_electroncio_paciente;
+       $scope.id = result[0].id;
+       $scope.correo = result[0].correo_electroncio_paciente;
+       // change any model outside of the Angular context,
+       // to inform Angular of the changes by calling $apply() manually
+       $scope.$apply();
     });
 
     
