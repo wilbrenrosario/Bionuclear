@@ -141,10 +141,29 @@ app.controller("HomeController", function($scope, $http,$location, superCache, G
       respuesta.then(function(result) { 
          $scope.resultados = result;
       });
+
+
+      $scope.descargar = function(){
+         //https://bionuclearapi.azurewebsites.net/api/Files/Download?fileName=Profile.pdf
+         $.ajax({
+            headers: {'Authorization': 'Bearer ' +superCache.get("token")},
+            url: 'https://bionuclearapi.azurewebsites.net/api/Files/Download?fileName=Profile.pdf',
+            type: 'POST',
+            contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+            processData: false, // NEEDED, DON'T OMIT THIS
+            beforeSend: function() {
+            },
+            success: function(msg) {
+               console.log("Descargado " + msg);
+            },
+            error: function() {
+               console.log("error");
+               console.log("El token actual es: " + superCache.get("token"));
+            }
+        });
+      };
+
     }
-
-   
-
     });
 app.controller("RegistrarController", function($scope, $http,$location, GlobalServices, superCache) {
 
