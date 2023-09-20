@@ -74,7 +74,7 @@
             </a>
           </li>
 
-          <li class="menu-item">
+          <li class="menu-item" ng-if="isAdmin">
             <a href="{{url_base}}registrar" class="menu-link">
               <i class="menu-icon tf-icons bx bx-home-circle"></i>
               <div data-i18n="Analytics">Registrar Resultados</div>
@@ -198,7 +198,7 @@
             </div>
             <br>
             <div class="mb-3">
-              <button class="btn btn-primary d-grid w-100" type="submit">Registrar Resultados</button>
+              <button class="btn btn-primary d-grid w-100" type="submit">Actualizar Resultados</button>
             </div>
           </div>
         </div>

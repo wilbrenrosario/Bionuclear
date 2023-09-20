@@ -11,7 +11,7 @@ app.factory("GlobalServices", function($http, superCache){
    var getData = function(nombre, clave) {
       return $http({method:"POST", url: url_base + "/api/Usuarios", data: {"correo": nombre, "clave": clave}}).then(function(result){
          superCache.put('token', result.data.token);
-         superCache.put('tipo_usuario', 0);
+         superCache.put('tipo_usuario', result.data.tipo); //0 admin 1 cliente
          return result.data;
       });
   };
@@ -113,6 +113,7 @@ app.controller("LoginController", function($scope, $http, $window, $location, Gl
 
 app.controller("HomeController", function($scope, $http,$location, superCache, GlobalServices) {
 
+    $scope.isAdmin = superCache.get("tipo_usuario") == "0" ? true : false;
     $scope.url_base = "https://master--incandescent-sunburst-c9c837.netlify.app/#!/";
     $scope.resultados = {};
 
@@ -128,6 +129,8 @@ app.controller("HomeController", function($scope, $http,$location, superCache, G
 
     });
 app.controller("RegistrarController", function($scope, $http,$location, GlobalServices, superCache) {
+
+   $scope.isAdmin = superCache.get("tipo_usuario") == "0" ? true : false;
 
    if(superCache.get("token") == undefined){
       $location.path('/');
@@ -166,6 +169,9 @@ app.controller("RegistrarController", function($scope, $http,$location, GlobalSe
     };
     });   
 app.controller("VerRegistrosController", function($scope, $http,$location, GlobalServices, superCache, $routeParams) {
+
+
+   $scope.isAdmin = superCache.get("tipo_usuario") == "0" ? true : false;
 
    if(superCache.get("token") == undefined){
       $location.path('/');
