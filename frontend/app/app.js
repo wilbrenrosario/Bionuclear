@@ -17,7 +17,6 @@ app.factory("GlobalServices", function($http, superCache){
   };
 
   var registrar = function(comentario, nombre_paciente, correo_electroncio_paciente, nombre_doctor, sexo_paciente, expdiente) {
-   console.log("Buscando el token: " + superCache.get("token"));
    $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
    return $http({method:"POST", url: url_base + "/api/Resultados", data: {
       "comentario": comentario,
@@ -34,9 +33,15 @@ app.factory("GlobalServices", function($http, superCache){
 
 
 var resultados = function() {
-   console.log("Buscando el token: " + superCache.get("token"));
    $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
    return $http({method:"GET", url: url_base + "/api/Resultados"}).then(function(result){
+       return result.data;
+   });
+};
+
+var buscar_resultado = function(id) {
+   $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
+   return $http({method:"GET", url: url_base + "/api/Resultados/ById?id=" + id}).then(function(result){
        return result.data;
    });
 };
@@ -150,9 +155,16 @@ app.controller("VerRegistrosController", function($scope, $http,$location, Globa
       $location.path('/');
     }
     $scope.url_base = "https://master--incandescent-sunburst-c9c837.netlify.app/#!/";
-    console.log("HOLA")
-    console.log($scope);
-    console.log($routeParams.id);
+    $scope.id = "";
+    $scope.correo = "";
 
+    var respuesta = GlobalServices.buscar_resultado($routeParams.id);
+    respuesta.then(function(result) { 
+       console.log(result);
+       $scope.id = result.id;
+       $scope.correo = result.correo_electroncio_paciente;
+    });
+
+    
 
     });   

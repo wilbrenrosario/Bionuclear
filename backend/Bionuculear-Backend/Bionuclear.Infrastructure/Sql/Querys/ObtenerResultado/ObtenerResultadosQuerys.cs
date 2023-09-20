@@ -3,5 +3,5 @@ using MediatR;
 
 namespace Bionuclear.Infrastructure.Sql.Querys.ObtenerResultado
 {
-    public record ObtenerResultadosQuerys : IRequest<IEnumerable<Resultados>>;
+    public record ObtenerResultadosQuerys(string? id) : IRequest<IEnumerable<Resultados>>;
 }

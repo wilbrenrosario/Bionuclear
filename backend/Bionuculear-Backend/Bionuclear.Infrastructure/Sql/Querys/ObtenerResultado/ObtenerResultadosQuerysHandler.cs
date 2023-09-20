@@ -15,7 +15,11 @@ namespace Bionuclear.Infrastructure.Sql.Querys.ObtenerResultado
         }
         public async Task<IEnumerable<Resultados>> Handle(ObtenerResultadosQuerys request, CancellationToken cancellationToken)
         {
-           return await _context.Resultados.ToListAsync();
+            if (request.id != "-1")
+            {
+                return await _context.Resultados.Where(x => x.id == int.Parse(request.id)).ToListAsync();
+            }
+            return await _context.Resultados.ToListAsync();
         }
     }
 }

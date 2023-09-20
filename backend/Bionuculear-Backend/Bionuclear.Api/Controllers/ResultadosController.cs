@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bionuclear.Api.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ResultadosController : ControllerBase
@@ -25,9 +25,17 @@ namespace Bionuclear.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> ObtenerResultados()
         {
-            var datos = await mediator.Send(new ObtenerResultadosQuerys());
+            var datos = await mediator.Send(new ObtenerResultadosQuerys("-1"));
             return Ok(datos);
         }
+
+        [HttpGet("ById")]
+        public async Task<IActionResult> ObtenerResultadosById(string id)
+        {
+            var datos = await mediator.Send(new ObtenerResultadosQuerys(id));
+            return Ok(datos);
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> RegistrarResultados(ResultadosDtos resultados)
