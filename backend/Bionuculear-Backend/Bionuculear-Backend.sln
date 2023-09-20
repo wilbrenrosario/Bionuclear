@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bionuclear.Infrastructure",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bionuclear.Api", "Bionuclear.Api\Bionuclear.Api.csproj", "{19C8C77F-21FB-4D77-B0A5-B35E145F276D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTest", "ApiTest\ApiTest.csproj", "{B86A512D-4A7B-4055-BA38-ADD8897F0680}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiTest", "ApiTest\ApiTest.csproj", "{B86A512D-4A7B-4055-BA38-ADD8897F0680}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timer", "..\..\functions\Timer\Timer.csproj", "{BF140FD1-8D23-496F-AD7F-0E4FC7831757}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{B86A512D-4A7B-4055-BA38-ADD8897F0680}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B86A512D-4A7B-4055-BA38-ADD8897F0680}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B86A512D-4A7B-4055-BA38-ADD8897F0680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF140FD1-8D23-496F-AD7F-0E4FC7831757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF140FD1-8D23-496F-AD7F-0E4FC7831757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF140FD1-8D23-496F-AD7F-0E4FC7831757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF140FD1-8D23-496F-AD7F-0E4FC7831757}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

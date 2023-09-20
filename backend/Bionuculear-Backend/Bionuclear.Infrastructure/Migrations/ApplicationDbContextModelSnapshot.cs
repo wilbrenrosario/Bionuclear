@@ -29,6 +29,10 @@ namespace Bionuclear.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
+                    b.Property<string>("body")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("correo_electronico")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

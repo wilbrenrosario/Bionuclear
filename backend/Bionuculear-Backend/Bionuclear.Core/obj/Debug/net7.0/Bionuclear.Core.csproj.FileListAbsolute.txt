@@ -21,3 +21,12 @@ C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Core\
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Core\obj\Debug\net7.0\Bionuclear.Core.pdb
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Core\obj\Debug\net7.0\Bionuclear.Core.genruntimeconfig.cache
 C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Core\obj\Debug\net7.0\ref\Bionuclear.Core.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Core\bin\Debug\net7.0\Humanizer.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Core\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Core\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Core\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Core\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Core\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Core\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Core\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\Wilbren\Desktop\Bionuclear\backend\Bionuculear-Backend\Bionuclear.Core\obj\Debug\net7.0\Bionuclear.Core.csproj.CopyComplete
