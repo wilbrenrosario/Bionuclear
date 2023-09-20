@@ -24,8 +24,4 @@
     <ProjectReference Include="..\Bionuclear.Application\Bionuclear.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Sql\Querys\" />
-  </ItemGroup>
-
 </Project>

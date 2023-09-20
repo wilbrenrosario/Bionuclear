@@ -2,6 +2,7 @@
 using Bionuclear.Core.Dtos;
 using Bionuclear.Infrastructure.Sql.Commands.Login;
 using Bionuclear.Infrastructure.Sql.Commands.Resultados;
+using Bionuclear.Infrastructure.Sql.Querys.ObtenerResultado;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -9,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bionuclear.Api.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ResultadosController : ControllerBase
@@ -19,6 +20,13 @@ namespace Bionuclear.Api.Controllers
         public ResultadosController(IMediator _mediator)
         {
             mediator = _mediator;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ObtenerResultados()
+        {
+            var datos = await mediator.Send(new ObtenerResultadosQuerys());
+            return Ok(datos);
         }
 
         [HttpPost]

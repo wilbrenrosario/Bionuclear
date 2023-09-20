@@ -32,10 +32,17 @@ app.factory("GlobalServices", function($http, superCache){
    });
 };
 
-  return { getData: getData, registrar: registrar};
+
+var resultados = function() {
+   console.log("Buscando el token: " + superCache.get("token"));
+   $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
+   return $http({method:"GET", url: url_base + "/api/Resultados"}).then(function(result){
+       return result.data;
+   });
+};
+
+  return { getData: getData, registrar: registrar, resultados: resultados};
 });
-
-
 
 app.config(function($routeProvider){
     $routeProvider
@@ -51,6 +58,10 @@ app.config(function($routeProvider){
             controller: "RegistrarController",
             templateUrl: "app/views/admin/registro_resultados.html"
             })
+            .when("/ver-registros", {
+               controller: "VerRegistrosController",
+               templateUrl: "app/views/admin/ver_registro_resultados.html"
+               })
         .otherwise({
          redirecTo: '/'
         });
@@ -75,19 +86,25 @@ app.controller("LoginController", function($scope, $http, $window, $location, Gl
       else{
          alert("Ingrese sus datos.")
       }
-
-      $scope.clave = "";
-
     };
     
     });
 
-app.controller("HomeController", function($scope, $http,$location, superCache) {
+app.controller("HomeController", function($scope, $http,$location, superCache, GlobalServices) {
 
     $scope.url_base = "https://master--incandescent-sunburst-c9c837.netlify.app/#!/";
+    $scope.resultados = {};
+
     if(superCache.get("token") == undefined){
       $location.path('/');
     }
+
+    var respuesta = GlobalServices.resultados();
+    respuesta.then(function(result) { 
+       console.log(result);
+       $scope.resultados = result;
+    });
+
     });
 app.controller("RegistrarController", function($scope, $http,$location, GlobalServices, superCache) {
 
@@ -126,4 +143,11 @@ app.controller("RegistrarController", function($scope, $http,$location, GlobalSe
         }
     });
     };
+    });   
+app.controller("VerRegistrosController", function($scope, $http,$location, GlobalServices, superCache) {
+
+   if(superCache.get("token") == undefined){
+      $location.path('/');
+    }
+    $scope.url_base = "https://master--incandescent-sunburst-c9c837.netlify.app/#!/";
     });   
