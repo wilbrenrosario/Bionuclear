@@ -46,7 +46,7 @@ namespace Bionuclear.Api.Controllers
             return Ok(datos);
         }
 
-        [HttpPut]
+        [HttpPost("updateresultados")]
         public async Task<IActionResult> UpdateResultados(Resultados resultados)
         {
             await mediator.Send(new UpdateResultadosCommand(resultados));

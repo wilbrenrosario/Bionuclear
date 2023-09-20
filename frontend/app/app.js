@@ -48,7 +48,7 @@ var buscar_resultado = function(id) {
 
 var updateregistro = function(comentario, nombre_paciente, correo_electroncio_paciente, nombre_doctor, sexo_paciente) {
    $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
-   return $http({method:"PUT", url: url_base + "/api/Resultados", data: {
+   return $http({method:"POST", url: url_base + "/api/Resultados/updateresultados", data: {
       "comentario": comentario,
       "nombre_paciente": nombre_paciente,
       "correo_electroncio_paciente": correo_electroncio_paciente,
