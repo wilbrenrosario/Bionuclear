@@ -46,7 +46,7 @@ var buscar_resultado = function(id) {
    });
 };
 
-  return { getData: getData, registrar: registrar, resultados: resultados};
+  return { getData: getData, registrar: registrar, resultados: resultados, buscar_resultado: buscar_resultado};
 });
 
 app.config(function($routeProvider){
