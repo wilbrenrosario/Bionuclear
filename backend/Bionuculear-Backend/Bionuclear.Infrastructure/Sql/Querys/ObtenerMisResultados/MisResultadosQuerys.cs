@@ -3,5 +3,5 @@ using MediatR;
 
 namespace Bionuclear.Infrastructure.Sql.Querys.ObtenerMisResultados
 {
-    public record MisResultadosQuerys(string id) : IRequest<IEnumerable<Resultados>>;
+    public record MisResultadosQuerys(string correo) : IRequest<IEnumerable<Resultados>>;
 }

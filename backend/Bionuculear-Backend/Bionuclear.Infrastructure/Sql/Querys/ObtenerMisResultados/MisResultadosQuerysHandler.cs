@@ -14,7 +14,7 @@ namespace Bionuclear.Infrastructure.Sql.Querys.ObtenerMisResultados
         }
         public async Task<IEnumerable<Resultados>> Handle(MisResultadosQuerys request, CancellationToken cancellationToken)
         {
-            return await _context.Resultados.Where(x => x.id == int.Parse(request.id)).ToListAsync();
+            return await _context.Resultados.Where(x => x.correo_electroncio_paciente == request.correo).ToListAsync();
         }
     }
 }

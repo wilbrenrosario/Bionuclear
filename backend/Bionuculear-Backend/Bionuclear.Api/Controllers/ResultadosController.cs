@@ -33,9 +33,9 @@ namespace Bionuclear.Api.Controllers
         }
 
         [HttpGet("Me")]
-        public async Task<IActionResult> ObtenerMisResultados(string id)
+        public async Task<IActionResult> ObtenerMisResultados(string correo)
         {
-            var datos = await mediator.Send(new MisResultadosQuerys(id));
+            var datos = await mediator.Send(new MisResultadosQuerys(correo));
             return Ok(datos);
         }
 

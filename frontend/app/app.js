@@ -13,6 +13,7 @@ app.factory("GlobalServices", function($http, superCache){
          superCache.put('token', result.data.token);
          superCache.put('tipo_usuario', result.data.tipo); //0 admin 1 cliente
          superCache.put('id', result.data.id); 
+         superCache.put('correo', result.data.correo);
          return result.data;
       });
   };
@@ -40,9 +41,9 @@ var resultados = function() {
    });
 };
 
-var misresultados = function(id) {
+var misresultados = function(correo) {
    $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
-   return $http({method:"GET", url: url_base + "/api/Resultados/Me?id=" + id}).then(function(result){
+   return $http({method:"GET", url: url_base + "/api/Resultados/Me?correo=" + correo}).then(function(result){
        return result.data;
    });
 };
@@ -136,7 +137,7 @@ app.controller("HomeController", function($scope, $http,$location, superCache, G
          $scope.resultados = result;
       });
     }else{
-      var respuesta = GlobalServices.misresultados(superCache.get("id"));
+      var respuesta = GlobalServices.misresultados(superCache.get("correo"));
       respuesta.then(function(result) { 
          $scope.resultados = result;
       });
