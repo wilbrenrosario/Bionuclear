@@ -1,7 +1,9 @@
 ﻿using Bionuclear.Core.AzureFiles;
 using Bionuclear.Core.Dtos;
+using Bionuclear.Core.Models.Resultados;
 using Bionuclear.Infrastructure.Sql.Commands.Login;
 using Bionuclear.Infrastructure.Sql.Commands.Resultados;
+using Bionuclear.Infrastructure.Sql.Commands.Update;
 using Bionuclear.Infrastructure.Sql.Querys.ObtenerResultado;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -42,6 +44,13 @@ namespace Bionuclear.Api.Controllers
         {
             var datos = await mediator.Send(new ResultadosCommand(resultados));
             return Ok(datos);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateResultados(Resultados resultados)
+        {
+            await mediator.Send(new UpdateResultadosCommand(resultados));
+            return Ok();
         }
     }
 }

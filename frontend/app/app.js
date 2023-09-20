@@ -46,7 +46,22 @@ var buscar_resultado = function(id) {
    });
 };
 
-  return { getData: getData, registrar: registrar, resultados: resultados, buscar_resultado: buscar_resultado};
+var updateregistro = function(comentario, nombre_paciente, correo_electroncio_paciente, nombre_doctor, sexo_paciente) {
+   $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
+   return $http({method:"PUT", url: url_base + "/api/Resultados", data: {
+      "comentario": comentario,
+      "nombre_paciente": nombre_paciente,
+      "correo_electroncio_paciente": correo_electroncio_paciente,
+      "nombre_doctor": nombre_doctor,
+      "sexo_paciente": sexo_paciente,
+      "numero_expediente": "0"
+    }}).then(function(result){
+      alert("Resultados Registrados!!")
+       return result.data;
+   });
+};
+
+  return { getData: getData, registrar: registrar, resultados: resultados, buscar_resultado: buscar_resultado, updateregistro: updateregistro};
 });
 
 app.config(function($routeProvider){
@@ -156,18 +171,56 @@ app.controller("VerRegistrosController", function($scope, $http,$location, Globa
     }
     $scope.url_base = "https://master--incandescent-sunburst-c9c837.netlify.app/#!/";
     $scope.id = "";
-    $scope.correo = "pendiente";
+    $scope.correo = "";
+    $scope.doctor = "";
+    $scope.comentario = "";
+    $scope.sexo = "";
 
     var respuesta = GlobalServices.buscar_resultado($routeParams.id);
     respuesta.then(function(result) { 
        console.log(result);
        $scope.id = result[0].id;
        $scope.correo = result[0].correo_electroncio_paciente;
-       // change any model outside of the Angular context,
-       // to inform Angular of the changes by calling $apply() manually
-       $scope.$apply();
+       $scope.doctor = result[0].nombre_doctor;
+       $scope.comentario = result[0].comentario;
+       $scope.sexo = result[0].sexo_paciente;
     });
 
     
+    $scope.updateregistrar = function(){
+
+      var respuesta = GlobalServices.updateregistro($scope.comentario, $scope.nombre, $scope.correo, $scope.doctor, $scope.sexo, $scope.expediente);
+      respuesta.then(function(result) { 
+         console.log(result);
+         alert("Resultados Actualizados")
+         var formData = new FormData($('#formulario')[0]);
+         formData.append('FileDetail', $('input[type=file]')[0].files[0]); 
+         console.log("Asi esta el file: " + ('input[type=file]')[0].files[0]);
+        /* if($('input[type=file]')[0].files[0]  == null){
+            //nada
+         }else{
+            $.ajax({
+               headers: {'Authorization': 'Bearer ' +superCache.get("token")},
+               url: 'https://bionuclearapi.azurewebsites.net/api/Files/Upload',
+               data: formData,
+               type: 'POST',
+               contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+               processData: false, // NEEDED, DON'T OMIT THIS
+               beforeSend: function() {
+                  
+               },
+               success: function(msg) {
+                  console.log(msg);
+                  $scope.expediente = msg;
+               
+               },
+               error: function() {
+                  console.log("error");
+                  console.log("El token actual es: " + superCache.get("token"));
+               }
+           });
+         }*/
+      });
+    }
 
     });   
