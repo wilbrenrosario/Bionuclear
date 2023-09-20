@@ -56,6 +56,13 @@ var buscar_resultado = function(id) {
    });
 };
 
+var buscar_archivo = function(expediente) {
+   $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
+   return $http({method:"GET", url: url_base + "/api/LinksResultados?expediente=" + expediente}).then(function(result){
+       return result.data;
+   });
+};
+
 var updateregistro = function(comentario, nombre_paciente, correo_electroncio_paciente, nombre_doctor, sexo_paciente, id, numero_expediente) {
    $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
    return $http({method:"POST", url: url_base + "/api/Resultados/updateresultados", data: {
@@ -72,7 +79,7 @@ var updateregistro = function(comentario, nombre_paciente, correo_electroncio_pa
    });
 };
 
-  return { getData: getData, registrar: registrar, resultados: resultados, buscar_resultado: buscar_resultado, updateregistro: updateregistro, misresultados: misresultados};
+  return { getData: getData, registrar: registrar, resultados: resultados, buscar_resultado: buscar_resultado, updateregistro: updateregistro, misresultados: misresultados, buscar_archivo: buscar_archivo};
 });
 
 app.config(function($routeProvider){
@@ -142,12 +149,15 @@ app.controller("HomeController", function($scope, $http, $window,$location, supe
          $scope.resultados = result;
       });
 
-      $scope.descargar = function(){
+      $scope.descargar = function(expediente){
          //'https://bionuclearapi.azurewebsites.net/api/Files/Download?fileName=Profile.pdf
-         $window.open(
-            "https://bionuclearapi.azurewebsites.net/api/Files/Download?fileName=Profile.pdf", "_blank");
+         var respuesta = GlobalServices.buscar_archivo(expediente);
+         respuesta.then(function(result) { 
+            console.log("Nombre : " + result);
+            $window.open(
+               "https://bionuclearapi.azurewebsites.net/api/Files/Download?fileName=" + result, "_blank");
+         });  
       };
-
     }
     });
 app.controller("RegistrarController", function($scope, $http,$location, GlobalServices, superCache) {

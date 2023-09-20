@@ -34,13 +34,13 @@ namespace Bionuclear.Infrastructure.Sql.Commands.Resultado
                 };
                 await _context.Usuarios.AddAsync(new_user);
                 await _context.ColaCorreos.AddAsync(new ColaCorreos { correo_electronico = request.Resultados.correo_electroncio_paciente });
-                var body = "<b>Usuario<b>: " + request.Resultados.correo_electroncio_paciente + " <br> <b>Clave<b>: 123456";
+                var body = "<b>Usuario<b>: " + request.Resultados.correo_electroncio_paciente + " <br> <b>Clave<b>: 123456 <br><br> PORTAL WEB: https://master--incandescent-sunburst-c9c837.netlify.app";
                 Correo.enviar_correo(configuration.GetSection("Email:Host").Value, int.Parse(configuration.GetSection("Email:Port").Value), configuration.GetSection("Email:UserName").Value, configuration.GetSection("Email:PassWord").Value, request.Resultados.correo_electroncio_paciente, body);
             }
             else
             {
                 await _context.ColaCorreos.AddAsync(new ColaCorreos { correo_electronico = request.Resultados.correo_electroncio_paciente });
-                var body = "Sus resultados estan listos, favor dirigirse a la web.";
+                var body = "Sus resultados estan listos, favor dirigirse a la web.  <br><br> PORTAL WEB: https://master--incandescent-sunburst-c9c837.netlify.app";
                 Correo.enviar_correo(configuration.GetSection("Email:Host").Value, int.Parse(configuration.GetSection("Email:Port").Value), configuration.GetSection("Email:UserName").Value, configuration.GetSection("Email:PassWord").Value, request.Resultados.correo_electroncio_paciente, body);
             }
 
