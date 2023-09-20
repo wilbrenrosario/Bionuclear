@@ -46,7 +46,7 @@ var buscar_resultado = function(id) {
    });
 };
 
-var updateregistro = function(comentario, nombre_paciente, correo_electroncio_paciente, nombre_doctor, sexo_paciente) {
+var updateregistro = function(comentario, nombre_paciente, correo_electroncio_paciente, nombre_doctor, sexo_paciente, id) {
    $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
    return $http({method:"POST", url: url_base + "/api/Resultados/updateresultados", data: {
       "comentario": comentario,
@@ -54,7 +54,8 @@ var updateregistro = function(comentario, nombre_paciente, correo_electroncio_pa
       "correo_electroncio_paciente": correo_electroncio_paciente,
       "nombre_doctor": nombre_doctor,
       "sexo_paciente": sexo_paciente,
-      "numero_expediente": "0"
+      "numero_expediente": "0",
+      "id": id
     }}).then(function(result){
       alert("Resultados Registrados!!")
        return result.data;
@@ -190,7 +191,7 @@ app.controller("VerRegistrosController", function($scope, $http,$location, Globa
     
     $scope.updateregistrar = function(){
 
-      var respuesta = GlobalServices.updateregistro($scope.comentario, $scope.nombre, $scope.correo, $scope.doctor, $scope.sexo, $scope.expediente);
+      var respuesta = GlobalServices.updateregistro($scope.comentario, $scope.nombre, $scope.correo, $scope.doctor, $scope.sexo, $routeParams.id);
       respuesta.then(function(result) { 
          console.log(result);
          alert("Resultados Actualizados")
