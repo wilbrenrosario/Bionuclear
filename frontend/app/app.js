@@ -12,6 +12,7 @@ app.factory("GlobalServices", function($http, superCache){
       return $http({method:"POST", url: url_base + "/api/Usuarios", data: {"correo": nombre, "clave": clave}}).then(function(result){
          superCache.put('token', result.data.token);
          superCache.put('tipo_usuario', result.data.tipo); //0 admin 1 cliente
+         superCache.put('id', result.data.id); 
          return result.data;
       });
   };
@@ -39,6 +40,14 @@ var resultados = function() {
    });
 };
 
+var misresultados = function(id) {
+   $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
+   return $http({method:"GET", url: url_base + "/api/Resultados/Me?id=" + id}).then(function(result){
+       return result.data;
+   });
+};
+
+
 var buscar_resultado = function(id) {
    $http.defaults.headers.common.Authorization = 'Bearer '+ superCache.get("token");  
    return $http({method:"GET", url: url_base + "/api/Resultados/ById?id=" + id}).then(function(result){
@@ -62,7 +71,7 @@ var updateregistro = function(comentario, nombre_paciente, correo_electroncio_pa
    });
 };
 
-  return { getData: getData, registrar: registrar, resultados: resultados, buscar_resultado: buscar_resultado, updateregistro: updateregistro};
+  return { getData: getData, registrar: registrar, resultados: resultados, buscar_resultado: buscar_resultado, updateregistro: updateregistro, misresultados: misresultados};
 });
 
 app.config(function($routeProvider){
@@ -121,11 +130,19 @@ app.controller("HomeController", function($scope, $http,$location, superCache, G
       $location.path('/');
     }
 
-    var respuesta = GlobalServices.resultados();
-    respuesta.then(function(result) { 
-       console.log(result);
-       $scope.resultados = result;
-    });
+    if($scope.isAdmin){
+      var respuesta = GlobalServices.resultados();
+      respuesta.then(function(result) { 
+         $scope.resultados = result;
+      });
+    }else{
+      var respuesta = GlobalServices.misresultados(superCache.get("id"));
+      respuesta.then(function(result) { 
+         $scope.resultados = result;
+      });
+    }
+
+   
 
     });
 app.controller("RegistrarController", function($scope, $http,$location, GlobalServices, superCache) {

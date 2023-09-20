@@ -62,7 +62,7 @@ namespace Bionuclear.Api.Controllers
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var stringToken = tokenHandler.WriteToken(token);
 
-            return Ok(new { token = stringToken, tipo = datos.tipo_usuario });
+            return Ok(new { token = stringToken, tipo = datos.tipo_usuario, id = datos.id });
         }
 
         [HttpPost("registrar")]

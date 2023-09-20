@@ -4,6 +4,7 @@ using Bionuclear.Core.Models.Resultados;
 using Bionuclear.Infrastructure.Sql.Commands.Login;
 using Bionuclear.Infrastructure.Sql.Commands.Resultados;
 using Bionuclear.Infrastructure.Sql.Commands.Update;
+using Bionuclear.Infrastructure.Sql.Querys.ObtenerMisResultados;
 using Bionuclear.Infrastructure.Sql.Querys.ObtenerResultado;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -28,6 +29,13 @@ namespace Bionuclear.Api.Controllers
         public async Task<IActionResult> ObtenerResultados()
         {
             var datos = await mediator.Send(new ObtenerResultadosQuerys("-1"));
+            return Ok(datos);
+        }
+
+        [HttpGet("Me")]
+        public async Task<IActionResult> ObtenerMisResultados(string id)
+        {
+            var datos = await mediator.Send(new MisResultadosQuerys(id));
             return Ok(datos);
         }
 
