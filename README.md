@@ -1,5 +1,5 @@
 # Bionuclear
-Prototipo basasdo en la gestion de resultados de laboratorios, administracion del aministrador y consulta del usuario final.
+Prototipo basado en la gestion de resultados de laboratorios, administracion del resultados y consulta del usuario final.
 
 # Tecnologias
 * C#
